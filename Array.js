@@ -281,8 +281,38 @@ function equalArray(arr1,arr2){
 const equal = equalArray([10,20,30,40],[10,20,30,50]);
 equal;
 
+//Question 12 : remove element from array at specific index 
+//also all occurance of that element
+// [1,2,3,4,5] => remove 2 => [1,3,4,5]
+// [1,2,3,4,5,2,2] => remove 2 => [1,3,4,5]
+
+//wrong way (delete leaves undefined in array)
+function removeElement1(arr,element){
+  delete element;
+  return arr;
+}
+
+const remove1 = removeElement1([4,1,2,4,3,4,5],4); 
+remove1;
+
+function removeElement(arr,element){
+  const result = [];
+  if(arr.includes(element)){
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] !== element) result.push(arr[i]);
+  }
+  return result;
+} else {
+  return `${element} is not found in ${arr}`
+}
+}
+
+const remove = removeElement([1,2,3,4,5],3);
+console.log(remove);
+
 
 // copy for questions
 //Question 12 : count how many times every element in array occurs
+
 
 
